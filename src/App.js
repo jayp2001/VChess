@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import * as ROUTES from "./constants/routes";
+
+import { SocketContext, socket } from "./context/socket";
+import { PlayerColorProvider } from "./hook/player_provider";
+
+import HomePage from "./pages/homepage";
+import GamePage from "./pages/gamepage";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <PlayerColorProvider>
+      <Router>
+        <Switch>
+          <SocketContext.Provider value={socket}>
+            <Route path={ROUTES.HOMEPAGE} exact component={HomePage} />
+            <Route path={ROUTES.GAMEPAGE} exact component={GamePage} />
+          </SocketContext.Provider>
+        </Switch>
+      </Router>
+    </PlayerColorProvider>
+
   );
 }
 
