@@ -47,7 +47,7 @@ export default function GamePage() {
     <div>
       <div className="flex flex-row ">
         <div className=" max-w-xl flex-grow m-2">
-          <p className="text-xl font-bold ">Send below game id to other</p>
+          <p className="text-xl font-bold ">Send below game id to other...!!!</p>
           <div className="flex">
             <div className="border border-gray-600 p-2 w-max mb-2 rounded-xl bg-purple-600 font-mono font-bold text-white ">
               {gameidcontext}
