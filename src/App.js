@@ -4,8 +4,8 @@ import * as ROUTES from "./constants/routes";
 import { SocketContext, socket } from "./context/socket";
 import { PlayerColorProvider } from "./hook/player_provider";
 
-import HomePage from "./pages/homepage";
-import GamePage from "./pages/gamepage";
+import HomePage from "./pages/BaseNavLayout/homepage/homepage";
+import GamePage from "./pages/BaseNavLayout/gamepage/gamepage";
 
 
 function App() {
